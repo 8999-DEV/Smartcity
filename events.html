@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Smart City - Events</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="partials.js"></script>
+    <script defer src="main.js"></script>
+    <script defer src="events.js"></script>
+</head>
+
+<body>
+    <div id="app-header"></div>
+    <main class="container">
+        <h1 data-reveal>City Events</h1>
+        <p data-reveal class="muted">Horizontal timeline with glow highlighting active events and smooth transitions.</p>
+
+        <section style="margin-top:18px">
+            <div class="timeline" id="timeline">
+                <div class="event">
+                    <h3>Jan</h3>
+                    <p>New Year Light Show</p>
+                </div>
+                <div class="event">
+                    <h3>Feb</h3>
+                    <p>Art & Tech Expo</p>
+                </div>
+                <div class="event">
+                    <h3>Mar</h3>
+                    <p>Spring Fest</p>
+                </div>
+                <div class="event">
+                    <h3>Apr</h3>
+                    <p>Marathon</p>
+                </div>
+                <div class="event">
+                    <h3>May</h3>
+                    <p>Food Carnival</p>
+                </div>
+                <div class="event">
+                    <h3>Jun</h3>
+                    <p>Music Nights</p>
+                </div>
+                <div class="event">
+                    <h3>Jul</h3>
+                    <p>Harbor Parade</p>
+                </div>
+                <div class="event">
+                    <h3>Aug</h3>
+                    <p>Innovation Summit</p>
+                </div>
+                <div class="event">
+                    <h3>Sep</h3>
+                    <p>Film Gala</p>
+                </div>
+                <div class="event">
+                    <h3>Oct</h3>
+                    <p>Science Week</p>
+                </div>
+                <div class="event">
+                    <h3>Nov</h3>
+                    <p>Design Biennale</p>
+                </div>
+                <div class="event">
+                    <h3>Dec</h3>
+                    <p>Winter Wonderland</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Events -->
+        <section class="section">
+            <h2 data-reveal>Featured Events</h2>
+            <div class="grid" style="margin-top:14px">
+                <a class="card" href="#" data-reveal>
+                    <img src="https://images.unsplash.com/photo-1464375117522-1311d6a5b81f?q=80&w=1200&auto=format&fit=crop" alt="Music Night">
+                    <div class="content">
+                        <h3>Neon Music Night</h3>
+                        <p>Fri 8pm • Harbor Arena</p>
+                    </div>
+                </a>
+                <a class="card" href="#" data-reveal>
+                    <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1200&auto=format&fit=crop" alt="Film Gala">
+                    <div class="content">
+                        <h3>Film Gala</h3>
+                        <p>Sat 7pm • Skyline Theater</p>
+                    </div>
+                </a>
+                <a class="card" href="#" data-reveal>
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1200&auto=format&fit=crop" alt="Street Art Walk">
+                    <div class="content">
+                        <h3>Street Art Walk</h3>
+                        <p>Sun 5pm • Old Town</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Monthly Calendar -->
+        <section class="section">
+            <h2 data-reveal>Monthly Calendar</h2>
+            <div class="card" style="margin-top:12px" data-reveal>
+                <div class="content">
+                    <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:8px" id="calendarGrid">
+                        <div class="muted">Mon</div>
+                        <div class="muted">Tue</div>
+                        <div class="muted">Wed</div>
+                        <div class="muted">Thu</div>
+                        <div class="muted">Fri</div>
+                        <div class="muted">Sat</div>
+                        <div class="muted">Sun</div>
+                        <div></div>
+                        <div></div>
+                        <div>1</div>
+                        <div>2</div>
+                        <div class="has-event">3</div>
+                        <div>4</div>
+                        <div>5</div>
+                        <div>6</div>
+                        <div>7</div>
+                        <div>8</div>
+                        <div class="has-event">9</div>
+                        <div>10</div>
+                        <div>11</div>
+                        <div>12</div>
+                        <div>13</div>
+                        <div class="has-event">14</div>
+                        <div>15</div>
+                        <div>16</div>
+                        <div>17</div>
+                        <div>18</div>
+                        <div>19</div>
+                        <div>20</div>
+                        <div>21</div>
+                        <div class="has-event">22</div>
+                        <div>23</div>
+                        <div>24</div>
+                        <div>25</div>
+                        <div>26</div>
+                        <div>27</div>
+                        <div>28</div>
+                        <div>29</div>
+                        <div class="has-event">30</div>
+                        <div>31</div>
+                    </div>
+                    <small class="muted" style="display:block;margin-top:8px">Highlighted dates indicate events.</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tickets CTA -->
+        <section class="section">
+            <div class="card" data-reveal>
+                <div class="content">
+                    <h3>Book Tickets</h3>
+                    <p class="muted">Reserve seats for featured events. Limited availability.</p>
+                    <form class="form" onsubmit="event.preventDefault(); this.nextElementSibling.style.display='block'; this.reset();">
+                        <input class="input" placeholder="Event name" required>
+                        <input class="input" type="number" placeholder="Tickets" min="1" max="10" required>
+                        <button class="btn" type="submit">Reserve</button>
+                    </form>
+                    <div class="alert-card" style="display:none;margin-top:10px">
+                        <h3>Request received</h3>
+                        <p class="muted">We’ll email you the confirmation shortly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Events Gallery -->
+        <section class="section">
+            <h2 data-reveal>Gallery</h2>
+            <div class="gallery" style="margin-top:12px">
+                <div class="item" data-reveal>
+                    <img src="https://images.unsplash.com/photo-1507878866276-a947ef722fee?q=80&w=1200&auto=format&fit=crop" alt="Concert">
+                    <div class="overlay">Concert</div>
+                </div>
+                <div class="item" data-reveal>
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1200&auto=format&fit=crop" alt="Expo">
+                    <div class="overlay">Expo</div>
+                </div>
+                <div class="item" data-reveal>
+                    <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=1200&auto=format&fit=crop" alt="Parade">
+                    <div class="overlay">Parade</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section">
+            <h2 data-reveal>FAQ</h2>
+            <div class="accordion" style="margin-top:12px">
+                <div class="accordion-item">
+                    <button class="accordion-btn">How do I get tickets?<span>+</span></button>
+                    <div class="accordion-content">
+                        <div class="content" style="padding:12px">Use the Book Tickets form above or visit venue partners.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-btn">Are events family-friendly?<span>+</span></button>
+                    <div class="accordion-content">
+                        <div class="content" style="padding:12px">Look for the family badge on event cards.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-btn">Refunds and rescheduling?<span>+</span></button>
+                    <div class="accordion-content">
+                        <div class="content" style="padding:12px">Follow the policy shown at checkout; varies by organizer.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="app-footer"></div>
+</body>
+
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Smart City - Healthcare</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="partials.js"></script>
+    <script defer src="main.js"></script>
+    <script defer src="healthcare.js"></script>
+</head>
+
+<body>
+    <div id="app-header"></div>
+    <main class="container">
+        <h1 data-reveal>Healthcare Network</h1>
+        <p data-reveal class="muted">Flip-card hospitals and clinics, with emergency services revealed on scroll.</p>
+
+        <section class="grid" style="margin-top:18px">
+            <div class="card flip" data-reveal>
+                <div class="flip-inner" style="height:220px">
+                    <div class="front content">
+                        <h3>Neon General Hospital</h3>
+                        <p>24/7 Emergency</p>
+                    </div>
+                    <div class="back content">
+                        <h3>Contact</h3>
+                        <p>+1 555 1010</p>
+                        <p>15 Star Ave</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card flip" data-reveal>
+                <div class="flip-inner" style="height:220px">
+                    <div class="front content">
+                        <h3>Pulse Care Clinic</h3>
+                        <p>OPD 9am-9pm</p>
+                    </div>
+                    <div class="back content">
+                        <h3>Contact</h3>
+                        <p>+1 555 1122</p>
+                        <p>42 Quantum Rd</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card flip" data-reveal>
+                <div class="flip-inner" style="height:220px">
+                    <div class="front content">
+                        <h3>City Heart Center</h3>
+                        <p>Cardiology</p>
+                    </div>
+                    <div class="back content">
+                        <h3>Contact</h3>
+                        <p>+1 555 1313</p>
+                        <p>9 Pulse St</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hospital Directory -->
+        <section class="section">
+            <h2 data-reveal>Hospital Directory</h2>
+            <div class="grid" style="margin-top:12px">
+                <div class="card" data-reveal>
+                    <div class="content">
+                        <h3>Neon General Hospital</h3>
+                        <p class="muted">15 Star Ave • 24/7 ER • 4.7 rating</p>
+                    </div>
+                </div>
+                <div class="card" data-reveal>
+                    <div class="content">
+                        <h3>Pulse Care Clinic</h3>
+                        <p class="muted">42 Quantum Rd • OPD 9am–9pm • 4.5 rating</p>
+                    </div>
+                </div>
+                <div class="card" data-reveal>
+                    <div class="content">
+                        <h3>City Heart Center</h3>
+                        <p class="muted">9 Pulse St • Cardiology • 4.8 rating</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Departments & Specialties -->
+        <section class="section">
+            <h2 data-reveal>Departments & Specialties</h2>
+            <div class="grid" style="margin-top:12px">
+                <div class="card" data-reveal>
+                    <div class="content">
+                        <h3>Emergency</h3>
+                        <p>Trauma, critical care</p>
+                    </div>
+                </div>
+                <div class="card" data-reveal>
+                    <div class="content">
+                        <h3>Cardiology</h3>
+                        <p>Heart health & surgery</p>
+                    </div>
+                </div>
+                <div class="card" data-reveal>
+                    <div class="content">
+                        <h3>Pediatrics</h3>
+                        <p>Child care & vaccines</p>
+                    </div>
+                </div>
+                <div class="card" data-reveal>
+                    <div class="content">
+                        <h3>Orthopedics</h3>
+                        <p>Bones & joints</p>
+                    </div>
+                </div>
+                <div class="card" data-reveal>
+                    <div class="content">
+                        <h3>Obstetrics</h3>
+                        <p>Maternity • NICU</p>
+                    </div>
+                </div>
+                <div class="card" data-reveal>
+                    <div class="content">
+                        <h3>Oncology</h3>
+                        <p>Cancer care</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Appointment Booking -->
+        <section class="section">
+            <h2 data-reveal>Book an Appointment</h2>
+            <div class="card" style="margin-top:12px" data-reveal>
+                <div class="content">
+                    <form class="form" id="appointmentForm">
+                        <input class="input" name="name" placeholder="Full name" required>
+                        <input class="input" name="contact" placeholder="Phone or email" required>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+                            <input class="input" name="date" type="date" required>
+                            <select class="input" name="department" required>
+                <option value="" disabled selected>Choose department</option>
+                <option>Emergency</option>
+                <option>Cardiology</option>
+                <option>Pediatrics</option>
+                <option>Orthopedics</option>
+                <option>Obstetrics</option>
+                <option>Oncology</option>
+              </select>
+                        </div>
+                        <textarea class="input" name="notes" rows="3" placeholder="Notes (optional)"></textarea>
+                        <button class="btn" type="submit">Request Slot</button>
+                    </form>
+                    <div class="alert-card" id="appointmentSuccess" style="display:none;margin-top:10px">
+                        <h3>Request received</h3>
+                        <p class="muted">We’ll contact you to confirm your appointment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Insurance & Billing -->
+        <section class="section">
+            <h2 data-reveal>Insurance & Billing</h2>
+            <div class="card" style="margin-top:12px" data-reveal>
+                <div class="content">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                        <div>
+                            <h4>Accepted Providers</h4>
+                            <p class="muted">CityCare, Neon Health, MedPlus, ShieldOne</p>
+                        </div>
+                        <div>
+                            <h4>Cashless Options</h4>
+                            <p class="muted">Available at partner hospitals with valid ID</p>
+                        </div>
+                    </div>
+                    <small class="muted" style="display:block;margin-top:8px">For queries, write to billing@smartcity.gov</small>
+                </div>
+            </div>
+        </section>
+
+        <!-- Health Tips -->
+        <section class="section">
+            <h2 data-reveal>Health Tips</h2>
+            <div class="card" style="margin-top:12px" data-reveal>
+                <div class="content">
+                    <ul class="list" style="display:grid;gap:8px;list-style:none;padding:0;margin:0">
+                        <li>Stay hydrated • Carry a refillable bottle</li>
+                        <li>10k steps/day • Use park trails and stairs</li>
+                        <li>Air quality alerts • Limit outdoor activity on poor AQI days</li>
+                        <li>Emergency contacts saved on phone lock screen</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section">
+            <h2 data-reveal>FAQ</h2>
+            <div class="accordion" style="margin-top:12px">
+                <div class="accordion-item">
+                    <button class="accordion-btn">Do hospitals offer cashless insurance?<span>+</span></button>
+                    <div class="accordion-content">
+                        <div class="content" style="padding:12px">Yes, at partner facilities with valid policy details.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-btn">How do I get an ambulance?<span>+</span></button>
+                    <div class="accordion-content">
+                        <div class="content" style="padding:12px">Dial 112 or use the Emergency page hotline.</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-btn">Can I reschedule my appointment?<span>+</span></button>
+                    <div class="accordion-content">
+                        <div class="content" style="padding:12px">Reply to the confirmation message to reschedule.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="app-footer"></div>
+</body>
+
+</html>

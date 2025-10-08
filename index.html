@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Smart City Portal - Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="partials.js"></script>
+    <script defer src="main.js"></script>
+    <!-- GSAP & Three.js -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script defer src="home.js"></script>
+</head>
+
+<body>
+    <div id="app-header"></div>
+
+    <main>
+        <section class="hero container bg-cover bg-fixed">
+            <div>
+                <h1 data-reveal>Welcome to the Smart City</h1>
+                <p data-reveal data-reveal-delay>Experience a futuristic hub for transport, healthcare, education, tourism, events and more — all in one immersive portal.</p>
+                <div class="cta" data-reveal>
+                    <a class="btn" href="tourism.html">Explore Tourism</a>
+                    <a class="btn ghost" href="#features">See Features</a>
+                </div>
+            </div>
+            <div>
+                <img id="cityImage" src="https://images.unsplash.com/photo-1491557345352-5929e343eb89?q=80&w=1600&auto=format&fit=crop" alt="City view" style="width:100%;height:380px;object-fit:cover;border:1px solid rgba(0,229,255,.15); border-radius:14px; margin-top:12px;"
+                />
+            </div>
+        </section>
+
+        <!-- Dashboard Overview -->
+        <section class="section">
+            <div class="container">
+                <h2 data-reveal>Dashboard Overview</h2>
+
+                <!-- Quick Actions -->
+                <div class="grid" style="margin-top:14px">
+                    <a class="card" href="transport.html" data-reveal>
+                        <div class="content">
+                            <h3>Plan a Trip</h3>
+                            <p class="muted">Best route • Live arrivals</p>
+                        </div>
+                    </a>
+                    <a class="card" href="lifestyle.html" data-reveal>
+                        <div class="content">
+                            <h3>Find Events</h3>
+                            <p class="muted">Tonight • Weekend</p>
+                        </div>
+                    </a>
+                    <a class="card" href="sustainability.html" data-reveal>
+                        <div class="content">
+                            <h3>Green Programs</h3>
+                            <p class="muted">Rebates • Initiatives</p>
+                        </div>
+                    </a>
+                    <a class="card" href="emergency.html" data-reveal>
+                        <div class="content">
+                            <h3>Emergency</h3>
+                            <p class="muted">Contacts • Alerts</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- City Alerts -->
+                <div class="ticker" style="margin-top:16px" data-reveal>
+                    <div class="ticker-track">
+                        <span>Meteorological Dept: Light showers expected this evening</span>
+                        <span>Traffic: Temporary lane closures on Central Ave 10am–4pm</span>
+                        <span>Transit: Extra services for stadium event 6–11pm</span>
+                        <span>Notice: Community market at River Park on Sunday</span>
+                    </div>
+                </div>
+
+                <!-- System Status -->
+                <div class="stats" style="margin-top:16px">
+                    <div class="stat" data-reveal>
+                        <h4>Uptime</h4>
+                        <div class="value">99.98%</div>
+                        <p class="muted">portal & APIs</p>
+                    </div>
+                    <div class="stat" data-reveal>
+                        <h4>Services Online</h4>
+                        <div class="value">27/27</div>
+                        <p class="muted">core modules</p>
+                    </div>
+                    <div class="stat" data-reveal>
+                        <h4>Incidents</h4>
+                        <div class="value">0</div>
+                        <p class="muted">open issues</p>
+                    </div>
+                    <div class="stat" data-reveal>
+                        <h4>Tickets</h4>
+                        <div class="value">3</div>
+                        <p class="muted">awaiting response</p>
+                    </div>
+                </div>
+
+                <!-- Recent Updates -->
+                <div class="card" style="margin-top:16px" data-reveal>
+                    <div class="content">
+                        <h3>Recent Updates</h3>
+                        <div style="display:grid;gap:10px;margin-top:8px">
+                            <div style="display:flex;justify-content:space-between;border-bottom:1px dashed rgba(0,229,255,.2);padding-bottom:8px">
+                                <span>Transport map refreshed with new station info</span><span class="muted">Now</span>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;border-bottom:1px dashed rgba(0,229,255,.2);padding-bottom:8px">
+                                <span>Live metrics tuned for faster updates</span><span class="muted">Today</span>
+                            </div>
+                            <div style="display:flex;justify-content:space-between">
+                                <span>New Sustainability milestones published</span><span class="muted">This week</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="features" class="container" style="padding:24px 24px 60px">
+            <div class="grid">
+                <div class="card" data-reveal>
+                    <div class="content">
+                        <h3>Transport Intelligence</h3>
+                        <p>Interactive metro and bus routes with animated pins and real-time style schedules.</p>
+                    </div>
+                </div>
+                <div class="card" data-reveal>
+                    <div class="content">
+                        <h3>Smart Healthcare</h3>
+                        <p>Flip through clinics and hospitals, with emergency services revealed as you scroll.</p>
+                    </div>
+                </div>
+                <div class="card" data-reveal>
+                    <div class="content">
+                        <h3>Education Hub</h3>
+                        <p>Discover top institutes, animated campus cards and program accordions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Highlights -->
+        <section class="section">
+            <div class="container">
+                <h2 data-reveal>City Services Highlights</h2>
+                <div class="grid" style="margin-top:14px">
+                    <a class="card" href="tourism.html" data-reveal>
+                        <div class="content">
+                            <h3>Tourism</h3>
+                            <p>Landmarks, galleries and cinematic transitions</p>
+                        </div>
+                    </a>
+                    <a class="card" href="lifestyle.html" data-reveal>
+                        <div class="content">
+                            <h3>Lifestyle</h3>
+                            <p>Restaurants, venues and neon hover previews</p>
+                        </div>
+                    </a>
+                    <a class="card" href="sustainability.html" data-reveal>
+                        <div class="content">
+                            <h3>Sustainability</h3>
+                            <p>Wind, solar and green city milestones</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Metrics -->
+        <section class="section">
+            <div class="container">
+                <h2 data-reveal>Live City Metrics</h2>
+                <div class="stats" style="margin-top:14px">
+                    <div class="stat" data-reveal>
+                        <h4>Commute Time</h4>
+                        <div class="value">22m</div>
+                        <p class="muted">avg cross-town</p>
+                    </div>
+                    <div class="stat" data-reveal>
+                        <h4>Air Quality</h4>
+                        <div class="value">AQI 38</div>
+                        <p class="muted">good</p>
+                    </div>
+                    <div class="stat" data-reveal>
+                        <h4>Grid Clean</h4>
+                        <div class="value">62%</div>
+                        <p class="muted">renewables</p>
+                    </div>
+                    <div class="stat" data-reveal>
+                        <h4>Events Today</h4>
+                        <div class="value">12</div>
+                        <p class="muted">citywide</p>
+                    </div>
+                </div>
+                <div class="charts">
+                    <div class="chart" data-reveal>
+                        <div class="line"></div>
+                        <div class="bars">
+                            <div class="bar" style="height:35%"></div>
+                            <div class="bar" style="height:48%"></div>
+                            <div class="bar" style="height:60%"></div>
+                            <div class="bar" style="height:72%"></div>
+                            <div class="bar" style="height:66%"></div>
+                        </div>
+                    </div>
+                    <div class="chart" data-reveal>
+                        <div class="line"></div>
+                        <div class="bars">
+                            <div class="bar" style="height:28%"></div>
+                            <div class="bar" style="height:40%"></div>
+                            <div class="bar" style="height:58%"></div>
+                            <div class="bar" style="height:64%"></div>
+                            <div class="bar" style="height:80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- City Updates Timeline -->
+        <section class="section">
+            <div class="container">
+                <h2 data-reveal>City Updates</h2>
+                <div class="timeline" style="margin-top:10px">
+                    <div class="event active" data-reveal>
+                        <strong>Now</strong>
+                        <p class="muted">Transit app refresh with live occupancy.</p>
+                    </div>
+                    <div class="event" data-reveal>
+                        <strong>Week</strong>
+                        <p class="muted">Bike lane expansion across downtown.</p>
+                    </div>
+                    <div class="event" data-reveal>
+                        <strong>Month</strong>
+                        <p class="muted">Eco‑market pop‑ups in 4 districts.</p>
+                    </div>
+                    <div class="event" data-reveal>
+                        <strong>Quarter</strong>
+                        <p class="muted">Solar rebate program round 2.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery -->
+        <section class="section">
+            <div class="container">
+                <h2 data-reveal>Gallery</h2>
+                <div class="gallery" style="margin-top:12px">
+                    <div class="item" data-reveal>
+                        <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=1200&auto=format&fit=crop" alt="Skyline">
+                        <div class="overlay">Skyline</div>
+                    </div>
+                    <div class="item" data-reveal>
+                        <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=1200&auto=format&fit=crop" alt="Park">
+                        <div class="overlay">Green Park</div>
+                    </div>
+                    <div class="item" data-reveal>
+                        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1200&auto=format&fit=crop" alt="Street Art">
+                        <div class="overlay">Street Art</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter CTA -->
+        <section class="section">
+            <div class="container">
+                <div class="card" data-reveal>
+                    <div class="content">
+                        <h3>Get City Updates</h3>
+                        <p class="muted">Sign up to receive the latest news on transport, events and initiatives.</p><br>
+                        <form class="form" onsubmit="event.preventDefault(); const card=this.nextElementSibling; card.style.display='block'; this.reset(); this.querySelector('button[type=submit]').disabled=true;">
+                            <input class="input" type="email" placeholder="you@example.com" required>
+                            <label style="display:flex; align-items:center; gap:8px; font-size:14px; color:var(--muted)">
+                <input type="checkbox" id="consentBox" onchange="this.form.querySelector('button[type=submit]').disabled=!this.checked"> I agree to receive emails and accept the <a href="#" style="color:var(--neon)">Privacy Policy</a>
+              </label>
+                            <button class="btn" type="submit" disabled>Subscribe</button>
+                            <small class="muted">We’ll send 1–2 emails per month. No spam. Unsubscribe anytime.</small>
+                        </form>
+                        <div class="alert-card" style="display:none; margin-top:10px">
+                            <h3>Thanks for subscribing!</h3>
+                            <p class="muted">Please check your inbox to confirm your email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="app-footer"></div>
+</body>
+
+</html>

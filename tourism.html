@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Smart City - Tourism</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="partials.js"></script>
+    <script defer src="main.js"></script>
+    <script defer src="tourism.js"></script>
+</head>
+
+<body>
+    <div id="app-header"></div>
+    <main class="container">
+        <h1 data-reveal>Tourism & Landmarks</h1>
+        <p data-reveal class="muted">Parallax gallery and cinematic carousel transitions.</p>
+
+        <section class="gallery" style="margin-top:16px">
+            <div class="item" data-reveal>
+                <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=1200&auto=format&fit=crop" alt="Skyline" />
+                <div class="overlay">Skyline Nexus</div>
+            </div>
+            <div class="item" data-reveal>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEVBRRnJ0A5Zv7m6vjtx2hw3jIXnlHAvS4YQ&s" alt="Museum" />
+                <div class="overlay">Quantum Museum</div>
+            </div>
+            <div class="item" data-reveal>
+                <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=1200&auto=format&fit=crop" alt="Park" />
+                <div class="overlay">Lumin Park</div>
+            </div>
+        </section>
+
+        <section style="margin-top:26px">
+            <h3 data-reveal>Featured</h3>
+            <div class="card" style="overflow:hidden" data-reveal>
+                <div class="content">
+                    <div class="carousel">
+                        <div class="slide">Night Market</div>
+                        <div class="slide">Cyber District</div>
+                        <div class="slide">Harbor Walk</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Highlights -->
+        <section class="section">
+            <h2 data-reveal>Highlights</h2>
+            <div class="grid" style="margin-top:14px">
+                <a class="card" href="#" data-reveal>
+                    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1200&auto=format&fit=crop" alt="Old Town">
+                    <div class="content">
+                        <h3>Old Town</h3>
+                        <p>Lantern alleys & artisan shops</p>
+                    </div>
+                </a>
+                <a class="card" href="#" data-reveal>
+                    <img src="https://th.bing.com/th/id/OIP.6u_3cO2m7fObzaGvzeEJkAHaFj?w=225&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Harbor">
+                    <div class="content">
+                        <h3>Neon Harbor</h3>
+                        <p>Sunset decks & seafood</p>
+                    </div>
+                </a>
+                <a class="card" href="#" data-reveal>
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1200&auto=format&fit=crop" alt="Street Art">
+                    <div class="content">
+                        <h3>Street Art District</h3>
+                        <p>Murals & light projections</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Passes & Tours -->
+        <section class="section">
+            <h2 data-reveal>Passes & Tours</h2>
+            <div class="card" style="margin-top:12px" data-reveal>
+                <div class="content">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                        <div>
+                            <h4>City Pass</h4>
+                            <p class="muted">Access to 12 attractions • Valid 72h</p>
+                            <p><strong style="color:var(--neon)">$49</strong></p>
+                        </div>
+                        <div>
+                            <h4>Guided Tours</h4>
+                            <p class="muted">Old Town Walk • Harbor Sunset • Museum Night</p>
+                            <p><strong style="color:var(--neon)">$15–$29</strong></p>
+                        </div>
+                    </div>
+                    <form class="form" onsubmit="event.preventDefault(); this.nextElementSibling.style.display='block'; this.reset();" style="margin-top:10px">
+                        <input class="input" placeholder="Choose pass or tour" required>
+                        <input class="input" type="date" required>
+                        <button class="btn" type="submit">Book</button>
+                    </form>
+                    <div class="alert-card" style="display:none;margin-top:10px">
+                        <h3>Request received</h3>
+                        <p class="muted">We’ll email you details and options shortly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Teaser -->
+        <section class="section">
+            <h2 data-reveal>Interactive Map</h2>
+            <div class="card" style="margin-top:12px" data-reveal>
+                <div class="content">
+                    <div id="mapTeaser" style="height:260px;border:1px solid rgba(0,229,255,.2);border-radius:12px;background:radial-gradient(280px 140px at 50% 30%, rgba(0,229,255,.06), rgba(12,16,38,.7));display:flex;align-items:center;justify-content:center;color:var(--muted)">Map preview — pins glow on hover</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Rated -->
+        <section class="section">
+            <h2 data-reveal>Top Rated</h2>
+            <div class="grid" style="margin-top:14px">
+                <div class="card" data-reveal>
+                    <div class="content">
+                        <h3>Quantum Museum</h3>
+                        <p class="muted">4.8 • Interactive science</p>
+                    </div>
+                </div>
+                <div class="card" data-reveal>
+                    <div class="content">
+                        <h3>Lumin Park</h3>
+                        <p class="muted">4.7 • Night light trails</p>
+                    </div>
+                </div>
+                <div class="card" data-reveal>
+                    <div class="content">
+                        <h3>Harbor Walk</h3>
+                        <p class="muted">4.6 • Street food & views</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+</body>
+
+</html>

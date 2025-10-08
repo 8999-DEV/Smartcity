@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Smart City - Contact</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="partials.js"></script>
+    <script defer src="main.js"></script>
+    <script defer src="contact.js"></script>
+</head>
+
+<body>
+    <div id="app-header"></div>
+    <main class="container">
+        <h1 data-reveal>Contact & Support</h1>
+        <p data-reveal class="muted">AI-style interactive map with animated pins and neon contact buttons.</p>
+
+        <section style="display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start;margin-top:16px">
+            <div class="card" style="position:relative;height:360px" id="contactMap">
+                <div class="content">
+                    <div style="position:absolute;inset:10px;border:1px solid rgba(0,229,255,.18);border-radius:10px;overflow:hidden">
+                        <img src="https://images.unsplash.com/photo-1502920917128-1aa500764ce7?q=80&w=1200&auto=format&fit=crop" alt="map" style="width:100%;height:100%;object-fit:cover;filter:contrast(1.2) saturate(1.1) hue-rotate(190deg) brightness(.6)">
+                        <div class="pin" style="position:absolute;left:40%;top:42%"></div>
+                        <div class="pin" style="position:absolute;left:68%;top:30%"></div>
+                        <div class="pin" style="position:absolute;left:22%;top:66%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h3>Get in touch</h3>
+                    <form class="form">
+                        <input class="input" placeholder="Your Name" required>
+                        <input class="input" type="email" placeholder="Email" required>
+                        <textarea class="input" placeholder="Message" rows="5"></textarea>
+                        <div style="display:flex;gap:10px">
+                            <button type="submit" class="btn">Send</button>
+                            <a class="btn ghost" href="mailto:hello@smartcity.ai">Email Us</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="app-footer"></div>
+</body>
+
+</html>

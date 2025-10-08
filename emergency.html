@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Smart City - Emergency</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="partials.js"></script>
+    <script defer src="main.js"></script>
+    <script defer src="emergency.js"></script>
+</head>
+
+<body>
+    <div id="app-header"></div>
+    <main>
+        <section class="section bg-cover bg-fixed" style="background-image:url('https://images.unsplash.com/photo-1530023367847-a683933f417d?q=80&w=1600&auto=format&fit=crop'); background-color:rgba(0,0,0,.55); background-blend-mode:multiply;">
+            <div class="container">
+                <h1 data-reveal>Emergency Center</h1>
+                <p data-reveal class="muted">Live alerts, hotline info, and rapid contacts with neon emphasis.</p>
+
+                <div class="ticker" style="margin-top:14px" data-reveal>
+                    <div class="ticker-track" id="tickerTrack">
+                        <span>ALERT: Maintenance on Metro Line A from 22:00 to 04:00</span>
+                        <span>NOTICE: Heavy rainfall expected tonight. Drive carefully.</span>
+                        <span>EMERGENCY: Hotline 112 for immediate assistance.</span>
+                        <span>ADVISORY: Health camp at Neon General Hospital, 9am-5pm</span>
+                    </div>
+                </div>
+
+                <div class="grid" style="margin-top:16px">
+                    <div class="alert-card" data-reveal>
+                        <h3>Hotline</h3>
+                        <p>Emergency: <strong>112</strong></p>
+                        <p>Fire: <strong>101</strong> | Ambulance: <strong>102</strong></p>
+                    </div>
+                    <div class="alert-card" data-reveal>
+                        <h3>Nearest Services</h3>
+                        <p>Use the Contact page map to spot nearby help points.</p>
+                    </div>
+                    <div class="alert-card" data-reveal>
+                        <h3>Preparedness</h3>
+                        <p>Save contacts, keep a first-aid kit, and follow advisories.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergency Contacts -->
+        <section class="section">
+            <div class="container">
+                <h2 data-reveal>Emergency Contacts</h2>
+                <div class="grid" style="margin-top:12px">
+                    <div class="card" data-reveal>
+                        <div class="content">
+                            <h3>Police</h3>
+                            <p class="muted">Dial <strong>100</strong> • City Police HQ</p>
+                            <p>Email: police@smartcity.gov</p>
+                        </div>
+                    </div>
+                    <div class="card" data-reveal>
+                        <div class="content">
+                            <h3>Fire & Rescue</h3>
+                            <p class="muted">Dial <strong>101</strong> • Central Fire Station</p>
+                            <p>Email: fire@smartcity.gov</p>
+                        </div>
+                    </div>
+                    <div class="card" data-reveal>
+                        <div class="content">
+                            <h3>Ambulance</h3>
+                            <p class="muted">Dial <strong>102</strong> • Neon General Hospital</p>
+                            <p>Email: ambulance@smartcity.gov</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Report Incident -->
+        <section class="section">
+            <div class="container">
+                <h2 data-reveal>Report an Incident</h2>
+                <div class="card" style="margin-top:12px" data-reveal>
+                    <div class="content">
+                        <form class="form" onsubmit="event.preventDefault(); this.nextElementSibling.style.display='block'; this.reset();">
+                            <input class="input" placeholder="Your name (optional)">
+                            <input class="input" type="tel" placeholder="Phone or email" required>
+                            <input class="input" placeholder="Location / Landmark" required>
+                            <textarea class="input" placeholder="Describe the incident" rows="4" required></textarea>
+                            <label style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--muted)">
+                <input type="checkbox" required> I confirm the information is accurate.
+              </label>
+                            <button class="btn" type="submit">Submit Report</button>
+                        </form>
+                        <div class="alert-card" style="display:none;margin-top:10px">
+                            <h3>Report received</h3>
+                            <p class="muted">Dispatch will review and respond if needed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preparedness Checklist -->
+        <section class="section">
+            <div class="container">
+                <h2 data-reveal>Preparedness Checklist</h2>
+                <div class="card" style="margin-top:12px" data-reveal>
+                    <div class="content">
+                        <ul class="list" id="prepList" style="display:grid;gap:8px;list-style:none;padding:0;margin:0">
+                            <li><label style="display:flex;gap:10px;align-items:center"><input type="checkbox"> First‑aid kit ready</label></li>
+                            <li><label style="display:flex;gap:10px;align-items:center"><input type="checkbox"> Emergency contacts saved</label></li>
+                            <li><label style="display:flex;gap:10px;align-items:center"><input type="checkbox"> Flashlight + batteries</label></li>
+                            <li><label style="display:flex;gap:10px;align-items:center"><input type="checkbox"> Bottled water & snacks</label></li>
+                            <li><label style="display:flex;gap:10px;align-items:center"><input type="checkbox"> Phone fully charged</label></li>
+                        </ul>
+                        <small class="muted" style="display:block;margin-top:8px">Tip: Keep essentials in an easy‑to‑grab go‑bag.</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Shelters & Clinics -->
+        <section class="section">
+            <div class="container">
+                <h2 data-reveal>Shelters & Clinics</h2>
+                <div class="card" style="margin-top:12px" data-reveal>
+                    <div class="content">
+                        <p class="muted">Nearest facilities (sample):</p>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                            <div>
+                                <h4>River Park Shelter</h4>
+                                <p>Open 24/7 • Capacity: 120</p>
+                            </div>
+                            <div>
+                                <h4>Neon General Clinic</h4>
+                                <p>Emergency • 2km from center</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section">
+            <div class="container">
+                <h2 data-reveal>FAQ</h2>
+                <div class="accordion" style="margin-top:12px">
+                    <div class="accordion-item">
+                        <button class="accordion-btn">When should I call emergency lines?<span>+</span></button>
+                        <div class="accordion-content">
+                            <div class="content" style="padding:12px">Call immediately if there is danger to life or property.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-btn">How can I get location help?<span>+</span></button>
+                        <div class="accordion-content">
+                            <div class="content" style="padding:12px">Share nearest landmark or enable GPS on your device.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-btn">Are my reports confidential?<span>+</span></button>
+                        <div class="accordion-content">
+                            <div class="content" style="padding:12px">Yes, reports are handled per city privacy policy.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="app-footer"></div>
+</body>
+
+</html>

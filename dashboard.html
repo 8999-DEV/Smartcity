@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Smart City - Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="partials.js"></script>
+    <script defer src="main.js"></script>
+    <script defer src="dashboard.js"></script>
+</head>
+
+<body>
+    <div id="app-header"></div>
+    <main>
+        <section class="section bg-cover bg-fixed" style="background-image:url('https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1600&auto=format&fit=crop'); background-color:rgba(0,0,0,.5); background-blend-mode:multiply;">
+            <div class="container">
+                <h1 data-reveal>City Dashboard</h1>
+                <p data-reveal class="muted">Real-time style stats and glowing infographics.</p>
+                <div class="stats" style="margin-top:16px">
+                    <div class="stat" data-reveal>
+                        <h4>Population</h4>
+                        <div class="value" data-value="12.4">0</div>
+                        <div class="muted">Millions</div>
+                    </div>
+                    <div class="stat" data-reveal>
+                        <h4>Energy Usage</h4>
+                        <div class="value" data-value="68">0</div>
+                        <div class="muted">GWh</div>
+                    </div>
+                    <div class="stat" data-reveal>
+                        <h4>Commute Time</h4>
+                        <div class="value" data-value="28">0</div>
+                        <div class="muted">Minutes</div>
+                    </div>
+                    <div class="stat" data-reveal>
+                        <h4>Air Quality</h4>
+                        <div class="value" data-value="92">0</div>
+                        <div class="muted">AQI Good</div>
+                    </div>
+                </div>
+                <div class="charts">
+                    <div class="chart" data-reveal>
+                        <div class="line"></div>
+                        <div class="bars" id="barsA"></div>
+                    </div>
+                    <div class="chart" data-reveal>
+                        <div class="line"></div>
+                        <div class="bars" id="barsB"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Quick Actions -->
+        <section class="section">
+            <div class="container">
+                <h2 data-reveal>Quick Actions</h2>
+                <div class="grid" style="margin-top:14px">
+                    <a class="card" href="transport.html" data-reveal>
+                        <div class="content">
+                            <h3>Plan a Trip</h3>
+                            <p class="muted">Best route • Live arrivals</p>
+                        </div>
+                    </a>
+                    <a class="card" href="lifestyle.html" data-reveal>
+                        <div class="content">
+                            <h3>Find Events</h3>
+                            <p class="muted">Tonight • Weekend</p>
+                        </div>
+                    </a>
+                    <a class="card" href="sustainability.html" data-reveal>
+                        <div class="content">
+                            <h3>Green Programs</h3>
+                            <p class="muted">Rebates • Initiatives</p>
+                        </div>
+                    </a>
+                    <a class="card" href="emergency.html" data-reveal>
+                        <div class="content">
+                            <h3>Emergency</h3>
+                            <p class="muted">Contacts • Alerts</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- City Alerts -->
+        <section class="section">
+            <div class="container">
+                <h2 data-reveal>City Alerts</h2>
+                <div class="ticker" style="margin-top:12px" data-reveal>
+                    <div class="ticker-track">
+                        <span>Meteorological Dept: Light showers expected this evening</span>
+                        <span>Traffic: Temporary lane closures on Central Ave 10am–4pm</span>
+                        <span>Transit: Extra services for stadium event 6–11pm</span>
+                        <span>Notice: Community market at River Park on Sunday</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- System Status -->
+        <section class="section">
+            <div class="container">
+                <h2 data-reveal>System Status</h2>
+                <div class="stats" style="margin-top:14px">
+                    <div class="stat" data-reveal>
+                        <h4>Uptime</h4>
+                        <div class="value">99.98%</div>
+                        <p class="muted">portal & APIs</p>
+                    </div>
+                    <div class="stat" data-reveal>
+                        <h4>Services Online</h4>
+                        <div class="value">27/27</div>
+                        <p class="muted">core modules</p>
+                    </div>
+                    <div class="stat" data-reveal>
+                        <h4>Incidents</h4>
+                        <div class="value">0</div>
+                        <p class="muted">open issues</p>
+                    </div>
+                    <div class="stat" data-reveal>
+                        <h4>Tickets</h4>
+                        <div class="value">3</div>
+                        <p class="muted">awaiting response</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Updates -->
+        <section class="section">
+            <div class="container">
+                <h2 data-reveal>Recent Updates</h2>
+                <div class="card" style="margin-top:12px" data-reveal>
+                    <div class="content">
+                        <div style="display:grid;gap:10px">
+                            <div style="display:flex;justify-content:space-between;border-bottom:1px dashed rgba(0,229,255,.2);padding-bottom:8px">
+                                <span>Transport map refreshed with new station info</span><span class="muted">Now</span>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;border-bottom:1px dashed rgba(0,229,255,.2);padding-bottom:8px">
+                                <span>Live metrics tuned for faster updates</span><span class="muted">Today</span>
+                            </div>
+                            <div style="display:flex;justify-content:space-between">
+                                <span>New Sustainability milestones published</span><span class="muted">This week</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Overview -->
+        <section class="section">
+            <div class="container">
+                <h2 data-reveal>Services Overview</h2>
+                <div class="grid" style="margin-top:14px">
+                    <div class="card" data-reveal>
+                        <div class="content">
+                            <h3>Transport</h3>
+                            <p>Live routes, arrivals, schedules</p>
+                        </div>
+                    </div>
+                    <div class="card" data-reveal>
+                        <div class="content">
+                            <h3>Healthcare</h3>
+                            <p>Clinics, emergency, availability</p>
+                        </div>
+                    </div>
+                    <div class="card" data-reveal>
+                        <div class="content">
+                            <h3>Education</h3>
+                            <p>Programs, admissions, campuses</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section">
+            <div class="container">
+                <h2 data-reveal>FAQ</h2>
+                <div class="accordion" style="margin-top:12px">
+                    <div class="accordion-item">
+                        <button class="accordion-btn">How often is data updated?<span>+</span></button>
+                        <div class="accordion-content">
+                            <div class="content" style="padding:12px">Most metrics refresh every 5 minutes; critical alerts are near real-time.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-btn">Where can I report an issue?<span>+</span></button>
+                        <div class="accordion-content">
+                            <div class="content" style="padding:12px">Use the Help section or the Emergency page for urgent matters.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-btn">Can I customize this dashboard?<span>+</span></button>
+                        <div class="accordion-content">
+                            <div class="content" style="padding:12px">A personalized view with saved widgets is coming soon.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="app-footer"></div>
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Smart City - Transport</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="partials.js"></script>
+    <script defer src="main.js"></script>
+    <script defer src="transport.js"></script>
+</head>
+
+<body>
+    <div id="app-header"></div>
+
+    <main class="container">
+        <h1 data-reveal>Transport Network</h1>
+        <p data-reveal class="muted">Interactive metro/bus map with animated pins. Hover to reveal station details, slide-in schedules.</p>
+
+        <section style="display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:start;margin-top:16px">
+            <div class="card" style="position:relative">
+                <div class="content">
+                    <div id="mapWrap" style="position:relative">
+                        <svg id="metroMap" viewBox="0 0 800 500" style="width:100%;height:420px">
+              <defs>
+                <linearGradient id="lineA" x1="0" x2="1" y1="0" y2="0">
+                  <stop offset="0%" stop-color="#00e5ff"/>
+                  <stop offset="100%" stop-color="#8a5bff"/>
+                </linearGradient>
+              </defs>
+              <path d="M50,400 C200,350 300,250 400,260 C520,270 620,200 760,120" stroke="url(#lineA)" stroke-width="6" fill="none" opacity=".8"/>
+              <g id="stations"></g>
+            </svg>
+                        <div id="tooltip" class="tooltip" style="display:none"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card" id="schedule">
+                <div class="content">
+                    <h3>Next Arrivals</h3>
+                    <div id="scheduleList"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Advisories -->
+        <section class="section">
+            <div class="container">
+                <h2 data-reveal>Service Advisories</h2>
+                <div class="ticker" style="margin-top:12px" data-reveal>
+                    <div class="ticker-track">
+                        <span>Line A: Minor delays due to scheduled maintenance</span>
+                        <span>Bus 24: Detour via Tech Square until 6pm</span>
+                        <span>Grand Station: Elevator service restored</span>
+                        <span>Night Service: Extra trains every 15 minutes</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Routes -->
+        <section class="section">
+            <div class="container">
+                <h2 data-reveal>Popular Routes</h2>
+                <div class="grid" style="margin-top:14px">
+                    <div class="card" data-reveal>
+                        <div class="content">
+                            <h3>River Park ↔ Grand Station</h3>
+                            <p class="muted">Every 4–6 min • ~12 min total</p>
+                        </div>
+                    </div>
+                    <div class="card" data-reveal>
+                        <div class="content">
+                            <h3>Tech Square ↔ Museum Mile</h3>
+                            <p class="muted">Every 5–8 min • ~15 min total</p>
+                        </div>
+                    </div>
+                    <div class="card" data-reveal>
+                        <div class="content">
+                            <h3>Harbor Point Express</h3>
+                            <p class="muted">Peak only • ~10 min nonstop</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fares & Passes -->
+        <section class="section">
+            <div class="container">
+                <h2 data-reveal>Fares & Passes</h2>
+                <div class="card" style="margin-top:12px" data-reveal>
+                    <div class="content">
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                            <div>
+                                <h4>Standard</h4>
+                                <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed rgba(0,229,255,.2)"><span>Single Ride</span><span style="color:var(--neon)">$2.50</span></div>
+                                <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed rgba(0,229,255,.2)"><span>Day Pass</span><span style="color:var(--neon)">$6.00</span></div>
+                                <div style="display:flex;justify-content:space-between;padding:8px 0"><span>Weekly Pass</span><span style="color:var(--neon)">$24.00</span></div>
+                            </div>
+                            <div>
+                                <h4>Discounted</h4>
+                                <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed rgba(0,229,255,.2)"><span>Student / Senior</span><span style="color:var(--neon)">−40%</span></div>
+                                <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px dashed rgba(0,229,255,.2)"><span>Low‑Income</span><span style="color:var(--neon)">−50%</span></div>
+                                <div style="display:flex;justify-content:space-between;padding:8px 0"><span>Children under 5</span><span style="color:var(--neon)">Free</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accessibility & Safety -->
+        <section class="section">
+            <div class="container">
+                <h2 data-reveal>Accessibility & Safety</h2>
+                <div class="grid" style="margin-top:12px">
+                    <div class="card" data-reveal>
+                        <div class="content">
+                            <h3>Accessibility</h3>
+                            <p>All key stations have step‑free access, tactile paving and audio announcements.</p>
+                        </div>
+                    </div>
+                    <div class="card" data-reveal>
+                        <div class="content">
+                            <h3>Safety</h3>
+                            <p>24/7 CCTV, platform attendants at peak, emergency intercoms on platforms.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section">
+            <div class="container">
+                <h2 data-reveal>FAQ</h2>
+                <div class="accordion" style="margin-top:12px">
+                    <div class="accordion-item">
+                        <button class="accordion-btn">Can I use one pass on bus and metro?<span>+</span></button>
+                        <div class="accordion-content">
+                            <div class="content" style="padding:12px">Yes, passes are integrated across bus and metro.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-btn">Are bikes allowed on trains?<span>+</span></button>
+                        <div class="accordion-content">
+                            <div class="content" style="padding:12px">Bikes are allowed outside peak hours; foldables anytime.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-btn">How do I report an issue?<span>+</span></button>
+                        <div class="accordion-content">
+                            <div class="content" style="padding:12px">Use the Help section in the app or contact station staff.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="app-footer"></div>
+</body>
+
+</html>
